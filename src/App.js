@@ -30,6 +30,7 @@ class App extends React.Component {
   }
 
   onClickButton() {
+    // Source usado: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise/then
     const { userName } = this.state;
     this.setState({ loading: true },
       () => createUser({ name: userName }).then(() => this.setState({
@@ -75,7 +76,9 @@ class App extends React.Component {
           <Route exact path="/profile" render={ (props) => <Profile { ...props } /> } />
           <Route
             path="/profile/edit"
-            render={ (props) => <ProfileEdit { ...props } /> }
+            render={ (props) => (<ProfileEdit
+              { ...props }
+            />) }
           />
           <Route exact path="/search" render={ (props) => <Search { ...props } /> } />
           <Route exact render={ (props) => <NotFound { ...props } /> } />
