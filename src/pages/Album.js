@@ -11,6 +11,7 @@ export default class Album extends Component {
     this.state = {
       loading: true,
       musicAlbum: [],
+      saveId: '',
     };
   }
 
@@ -22,11 +23,11 @@ export default class Album extends Component {
 
   async getMusicAlbum(id) {
     const musicAlbum = await getMusics(id);
-    this.setState({ musicAlbum }, () => this.setState({ loading: false }));
+    this.setState({ musicAlbum, saveId: id }, () => this.setState({ loading: false }));
   }
 
   render() {
-    const { musicAlbum, loading } = this.state;
+    const { musicAlbum, loading, saveId } = this.state;
     return (
       <div data-testid="page-album">
         <Header />
@@ -37,11 +38,13 @@ export default class Album extends Component {
             {console.log(musicAlbum)}
             {/* usar o slice para pular o primeiro objeto que não é musica
             Source: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/slice */}
-            {musicAlbum.slice(1).map(({ trackName, previewUrl }) => (
+            {musicAlbum.slice(1).map(({ trackName, previewUrl, trackId }) => (
               <MusicCard
                 key={ trackName }
                 trackName={ trackName }
                 previewUrl={ previewUrl }
+                trackId={ trackId }
+                saveId={ saveId }
               />
             ))}
           </div>
