@@ -35,7 +35,6 @@ export default class Album extends Component {
           <div>
             <h1 data-testid="artist-name">{musicAlbum[0].artistName}</h1>
             <p data-testid="album-name">{musicAlbum[0].collectionName}</p>
-            {console.log(musicAlbum)}
             {/* usar o slice para pular o primeiro objeto que não é musica
             Source: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/slice */}
             {musicAlbum.slice(1).map(({ trackName, previewUrl, trackId }) => (
