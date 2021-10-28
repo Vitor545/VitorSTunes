@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
+import searchAlbumsAPI from '../services/searchAlbumsAPI';
+import Loading from '../components/ Loading';
+import Forms from '../components/Forms';
 
 export default class Search extends Component {
   constructor() {
     super();
     this.state = {
       banda: '',
+      bandasave2: '',
+      albumApi: [],
       isButtonDSearch: true,
+      loading: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.buttonSearch = this.buttonSearch.bind(this);
@@ -19,8 +25,18 @@ export default class Search extends Component {
     this.setState({ banda: valueDigitado }, () => this.checkButtonSearch());
   }
 
-  buttonSearch() {
+  async getsearchAlbumsAPI() {
+    const { banda } = this.state;
+    const albumApi = await searchAlbumsAPI(banda);
+    this.setState({ albumApi }, () => this.setState({
+      loading: false,
+      banda: '',
+    }));
+  }
 
+  buttonSearch() {
+    const { banda } = this.state;
+    this.setState({ loading: true, bandasave2: banda }, () => this.getsearchAlbumsAPI());
   }
 
   checkButtonSearch() {
@@ -31,8 +47,8 @@ export default class Search extends Component {
   }
 
   render() {
-    const { isButtonDSearch } = this.state;
-    return (
+    const { isButtonDSearch, bandasave2, albumApi, loading } = this.state;
+    return loading ? <Loading /> : (
       <div data-testid="page-search">
         <Header />
         <label htmlFor="search-artist-input">
@@ -43,15 +59,22 @@ export default class Search extends Component {
             onChange={ this.handleChange }
             placeholder="Digite a banda"
           />
-          <button
-            type="button"
-            data-testid="search-artist-button"
-            onClick={ this.buttonSearch }
-            disabled={ isButtonDSearch }
-          >
-            Pesquisar
-          </button>
         </label>
+
+        <button
+          type="button"
+          data-testid="search-artist-button"
+          onClick={ this.buttonSearch }
+          disabled={ isButtonDSearch }
+        >
+          Pesquisar
+        </button>
+        <div>
+          <p>{`Resultado de álbuns de: ${bandasave2}`}</p>
+          {albumApi.length === 0 ? <p>Nenhum álbum foi encontrado</p> : <Forms
+            albumApi={ albumApi }
+          /> }
+        </div>
       </div>
     );
   }
