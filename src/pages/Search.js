@@ -18,7 +18,7 @@ export default class Search extends Component {
     this.buttonSearch = this.buttonSearch.bind(this);
     this.checkButtonSearch = this.checkButtonSearch.bind(this);
   }
-  // requesito 5 muito parecido com o do Login
+  // requesito 5 e 6 muito parecido com o do Login
 
   handleChange({ target }) {
     const valueDigitado = target.value;
