@@ -13,7 +13,8 @@ export default class Login extends Component {
       irSearch } = this.props;
     if (irSearch) return <Redirect to="/search" />;
     return loading ? <Loading /> : (
-      <div data-testid="page-login">
+      <div data-testid="page-login" className='contanner-login'>
+        <p className='vs'>VS TUNES</p>
         <label htmlFor="login-name-input">
           <input
             type="text"
