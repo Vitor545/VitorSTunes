@@ -71,14 +71,12 @@ class App extends React.Component {
           <Route
             exact
             path="/favorites"
-            render={ (props) => <Favorites { ...props } /> }
+            render={ (props) => <NotFound { ...props } />  }
           />
-          <Route exact path="/profile" render={ (props) => <Profile { ...props } /> } />
+          <Route exact path="/profile" render={ (props) => <NotFound { ...props } />  } />
           <Route
             path="/profile/edit"
-            render={ (props) => (<ProfileEdit
-              { ...props }
-            />) }
+            render={ (props) => (<NotFound { ...props } /> ) }
           />
           <Route exact path="/search" render={ (props) => <Search { ...props } /> } />
           <Route exact render={ (props) => <NotFound { ...props } /> } />

@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import Loading from '../components/ Loading';
 import MusicCard from '../components/MusicCard';
+import { getUser } from '../services/userAPI';
 
 export default class Album extends Component {
   constructor(props) {
@@ -12,6 +13,7 @@ export default class Album extends Component {
       loading: true,
       musicAlbum: [],
       saveId: '',
+      userName: '',
     };
   }
 
@@ -19,33 +21,45 @@ export default class Album extends Component {
     const { match } = this.props;
     const { params: { id } } = match;
     this.getMusicAlbum(id);
+    this.recuperaUser();
+  }
+
+  async recuperaUser() {
+    const userName = await getUser();
+    this.setState({ userName }, () => this.setState({ loading: false }));
   }
 
   async getMusicAlbum(id) {
     const musicAlbum = await getMusics(id);
-    this.setState({ musicAlbum, saveId: id }, () => this.setState({ loading: false }));
+    this.setState({ musicAlbum, saveId: id });
   }
 
   render() {
-    const { musicAlbum, loading, saveId } = this.state;
+    const { musicAlbum, loading, saveId, userName } = this.state;
     return (
       <div data-testid="page-album">
-        <Header />
         {loading ? <Loading /> : (
-          <div>
-            <h1 data-testid="artist-name">{musicAlbum[0].artistName}</h1>
-            <p data-testid="album-name">{musicAlbum[0].collectionName}</p>
+          <div className="album-id">
+            <header className="header">
+              <Header userName={ userName } />
+            </header>
+            <div className="title-grid">
+              <h1 data-testid="artist-name">{musicAlbum[0].artistName}</h1>
+              <p data-testid="album-name">{musicAlbum[0].collectionName}</p>
+            </div>
             {/* usar o slice para pular o primeiro objeto que não é musica
             Source: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/slice */}
-            {musicAlbum.slice(1).map(({ trackName, previewUrl, trackId }) => (
-              <MusicCard
-                key={ trackName }
-                trackName={ trackName }
-                previewUrl={ previewUrl }
-                trackId={ trackId }
-                saveId={ saveId }
-              />
-            ))}
+            <div className="music-grid">
+              {musicAlbum.slice(1).map(({ trackName, previewUrl, trackId }) => (
+                <MusicCard
+                  key={ trackName }
+                  trackName={ trackName }
+                  previewUrl={ previewUrl }
+                  trackId={ trackId }
+                  saveId={ saveId }
+                />
+              ))}
+            </div>
           </div>
         ) }
       </div>

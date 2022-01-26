@@ -1,22 +1,37 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Loading from './ Loading';
 import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
+import getMusics from '../services/musicsAPI';
+
 
 export default class CardMusic extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: false,
       checked: false,
+      music: [],
+      favorite: false,
     };
     this.getMusicFavorita = this.getMusicFavorita.bind(this);
     this.setStateMusic = this.setStateMusic.bind(this);
+    this.trackMeu = this.trackMeu.bind(this);
+  }
+
+  componentDidMount() {
+    const { trackMeu } = this.props;
+    this.trackMeu(trackMeu)
+
+  }
+
+  async trackMeu(trackMeu) {
+    const music = await getMusics(trackMeu);
+    console.log(music);
+    this.setState({ music });
   }
 
   async getMusicFavorita({ target }) {
     const musicaId = target.name;
-    this.setState({ loading: true }, () => this.setStateMusic(musicaId));
+    this.setStateMusic(musicaId)
   }
 
   async setStateMusic(musicaId) {
@@ -28,35 +43,23 @@ export default class CardMusic extends Component {
       this.setState({ checked: true });
     }
     await getFavoriteSongs();
-    this.setState({ loading: false });
   }
 
   // saveid é porque addSong recebe o mesmo paramentro de getMusic
   render() {
-    const { previewUrl, trackName, trackId, saveId } = this.props;
-    const { loading, checked } = this.state;
-    return loading ? <Loading /> : (
-      <div>
-        <p>{ trackName }</p>
-        <audio data-testid="audio-component" src={ previewUrl } controls>
-          <track kind="captions" />
-          O seu navegador não suporta o elemento
-          {' '}
-          <code>audio</code>
-          .
-        </audio>
-        <label htmlFor={ trackId }>
-          Favoritar
-          <input
-            type="checkbox"
-            id={ trackId }
-            name={ saveId }
-            checked={ checked }
-            onChange={ this.getMusicFavorita }
-            data-testid={ `checkbox-music-${trackId}` }
-          />
-        </label>
-      </div>
+    const { previewUrl, trackName, trackId, saveId, trackMeu } = this.props;
+    const { checked } = this.state;
+    return (
+        <div className="music-card">
+          <p>{ trackName }</p>
+            <audio  data-testid="audio-component" src={ previewUrl } controls>
+              <track kind="captions" />
+              O seu navegador não suporta o elemento
+              {' '}
+              <code>audio</code>
+              .
+            </audio>
+        </div>
     );
   }
 }

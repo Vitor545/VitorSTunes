@@ -6,7 +6,7 @@ export default class Forms extends Component {
   render() {
     const { albumApi } = this.props;
     return (
-      <div>
+      <div className="group-class">
         {albumApi.map((album) => (
           <Link
             to={ `/album/${album.collectionId}` }
