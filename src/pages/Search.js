@@ -28,7 +28,7 @@ export default class Search extends Component {
   // requesito 5 e 6 muito parecido com o do Login
 
   handleChange({ target }) {
-    const valueDigitado = target.value;
+    const valueDigitado = (target.value).toUpperCase();
     this.setState({ banda: valueDigitado }, () => this.checkButtonSearch());
   }
 
@@ -42,12 +42,13 @@ export default class Search extends Component {
   }
 
   componentDidMount() {
+    this.getRecomendacion();
     this.recuperaUser();
 
   }
 
   async getRecomendacion() {
-    const albumApi = await searchAlbumsAPI("eminem");
+    const albumApi = await searchAlbumsAPI("EMINEM");
     this.setState({ bandaRecomendacion: albumApi });
   }
 
@@ -114,7 +115,7 @@ export default class Search extends Component {
           </div>
         </div>
         <div className="musicas-contaneir">
-          {this.geraMusica(bandasave2, albumApi) }
+          {albumApi.length === 0 ? this.geraMusicaRecom(bandaRecomendacion) : this.geraMusica(bandasave2, albumApi) }
         </div>
       </div>
     );
