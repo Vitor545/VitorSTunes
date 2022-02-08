@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.f05f38b5.chunk.css",
-    "main.js": "/static/js/main.ed3d9432.chunk.js",
-    "main.js.map": "/static/js/main.ed3d9432.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.89d2d065.js",
-    "runtime-main.js.map": "/static/js/runtime-main.89d2d065.js.map",
-    "static/js/2.3ff56179.chunk.js": "/static/js/2.3ff56179.chunk.js",
-    "static/js/2.3ff56179.chunk.js.map": "/static/js/2.3ff56179.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.f05f38b5.chunk.css.map": "/static/css/main.f05f38b5.chunk.css.map",
-    "static/js/2.3ff56179.chunk.js.LICENSE.txt": "/static/js/2.3ff56179.chunk.js.LICENSE.txt"
+    "main.css": "/VitorTunes/static/css/main.f05f38b5.chunk.css",
+    "main.js": "/VitorTunes/static/js/main.83157bbf.chunk.js",
+    "main.js.map": "/VitorTunes/static/js/main.83157bbf.chunk.js.map",
+    "runtime-main.js": "/VitorTunes/static/js/runtime-main.f4da755a.js",
+    "runtime-main.js.map": "/VitorTunes/static/js/runtime-main.f4da755a.js.map",
+    "static/js/2.3ff56179.chunk.js": "/VitorTunes/static/js/2.3ff56179.chunk.js",
+    "static/js/2.3ff56179.chunk.js.map": "/VitorTunes/static/js/2.3ff56179.chunk.js.map",
+    "index.html": "/VitorTunes/index.html",
+    "static/css/main.f05f38b5.chunk.css.map": "/VitorTunes/static/css/main.f05f38b5.chunk.css.map",
+    "static/js/2.3ff56179.chunk.js.LICENSE.txt": "/VitorTunes/static/js/2.3ff56179.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.89d2d065.js",
+    "static/js/runtime-main.f4da755a.js",
     "static/js/2.3ff56179.chunk.js",
     "static/css/main.f05f38b5.chunk.css",
-    "static/js/main.ed3d9432.chunk.js"
+    "static/js/main.83157bbf.chunk.js"
   ]
 }

@@ -13,7 +13,7 @@
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },
-  "homepage": "https://vitor545.github.io/VitorTunes/",
+  "homepage": "https://vstunes.netlify.app/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
