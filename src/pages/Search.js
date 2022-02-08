@@ -42,7 +42,6 @@ export default class Search extends Component {
   }
 
   componentDidMount() {
-    this.getRecomendacion();
     this.recuperaUser();
 
   }
@@ -115,7 +114,7 @@ export default class Search extends Component {
           </div>
         </div>
         <div className="musicas-contaneir">
-          { this.geraMusica(bandasave2, albumApi) }
+          {this.geraMusica(bandasave2, albumApi) }
         </div>
       </div>
     );
