@@ -28,7 +28,7 @@ export default class Search extends Component {
   // requesito 5 e 6 muito parecido com o do Login
 
   handleChange({ target }) {
-    const valueDigitado = (target.value).toUpperCase();
+    const valueDigitado = target.value;
     this.setState({ banda: valueDigitado }, () => this.checkButtonSearch());
   }
 
