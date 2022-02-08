@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/VitorSTunes/static/css/main.89e8f925.chunk.css",
+    "main.js": "/VitorSTunes/static/js/main.6a45560a.chunk.js",
+    "main.js.map": "/VitorSTunes/static/js/main.6a45560a.chunk.js.map",
+    "runtime-main.js": "/VitorSTunes/static/js/runtime-main.65c0b2d1.js",
+    "runtime-main.js.map": "/VitorSTunes/static/js/runtime-main.65c0b2d1.js.map",
+    "static/js/2.3ff56179.chunk.js": "/VitorSTunes/static/js/2.3ff56179.chunk.js",
+    "static/js/2.3ff56179.chunk.js.map": "/VitorSTunes/static/js/2.3ff56179.chunk.js.map",
+    "index.html": "/VitorSTunes/index.html",
+    "static/css/main.89e8f925.chunk.css.map": "/VitorSTunes/static/css/main.89e8f925.chunk.css.map",
+    "static/js/2.3ff56179.chunk.js.LICENSE.txt": "/VitorSTunes/static/js/2.3ff56179.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.65c0b2d1.js",
+    "static/js/2.3ff56179.chunk.js",
+    "static/css/main.89e8f925.chunk.css",
+    "static/js/main.6a45560a.chunk.js"
+  ]
+}

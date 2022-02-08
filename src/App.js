@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { HashRouter, Route } from 'react-router-dom';
 import { Switch } from 'react-router';
 import Login from './pages/Login';
 import Search from './pages/Search';
@@ -53,7 +53,7 @@ class App extends React.Component {
       irSearch,
     } = this.state;
     return (
-      <BrowserRouter>
+      <HashRouter>
         <Switch>
           <Route
             exact
@@ -81,7 +81,7 @@ class App extends React.Component {
           <Route exact path="/search" render={ (props) => <Search { ...props } /> } />
           <Route exact render={ (props) => <NotFound { ...props } /> } />
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }

@@ -10,6 +10,7 @@
 }
  body{
    overflow-x: hidden;
+   
  }
 
 textarea:focus, input:focus {
