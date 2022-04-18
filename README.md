@@ -51,7 +51,7 @@ Para executar com sucesso o projeto é necessário instalar o Node.js:
 
 **Para executar a aplicação em sua máquina local basta escolher uma pasta no seu computador e seguir os seguintes comandos no terminal do seu computador.**
 
-Copie cada linha de código e cole no terminal uma a uma.
+Copie as linhas de código e cole no terminal.
 
 ```bash
 git clone git@github.com:Vitor545/VitorSTunes.git
