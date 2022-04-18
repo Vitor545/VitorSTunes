@@ -1,6 +1,4 @@
-<div align='center'>
-  ##Projeto VitorTunes
- </div>
+##Projeto VitorTunes
 
 <h3 align='center'> Pronto para escultar as melhores músicas? </h3>
 
