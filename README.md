@@ -35,10 +35,10 @@
 
 ## ⬇️ Instalações necessárias
 
-Para executar com sucesso o projeto é necessário instalar o GIT:
+- Para executar com sucesso o projeto é necessário instalar o GIT:
 [GIT](https://git-scm.com/downloads)
 
-Para executar com sucesso o projeto é necessário instalar o Node.js:
+- Para executar com sucesso o projeto é necessário instalar o Node.js:
 [Node.js](https://nodejs.org/en/download/)
 
 <br/>
