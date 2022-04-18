@@ -1,4 +1,6 @@
-<p align="center">##Projeto VitorTunes</p>
+<div align='center'>
+  ##Projeto VitorTunes
+ </div>
 
 <h3 align='center'> Pronto para escultar as melhores músicas? </h3>
 
