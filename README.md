@@ -1,6 +1,6 @@
 ## Projeto VitorTunes
  
-<h3 align='center'> Pronto para escultar as melhores músicas? </h3>
+<h3 align='center'> 🎵 Pronto para escultar as melhores músicas? </h3>
 
 ## 📄 Contexto
 
@@ -29,8 +29,8 @@
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-
-<h3 align='center'>Rodando na sua máquina</h3>
+ 
+<h3 align='center'> 💿 Rodando na sua máquina</h3>
 
 
 ## ⬇️ Instalações necessárias
