@@ -30,6 +30,18 @@
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
  
+<h3 align='center'> 🌎 Rodando no navegador</h3>
+
+- Você pode clicar no link abaixo para ser redirecionado ao site:
+[VITORTUNES](https://vitortunes.netlify.app/#/)
+
+
+<br/>
+
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+
 <h3 align='center'> 💿 Rodando na sua máquina</h3>
 
 
