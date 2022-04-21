@@ -1,6 +1,6 @@
 ## Projeto VitorTunes
  
-<h3 align='center'> 🎵 Pronto para escultar as melhores músicas? </h3>
+<h3 align='center'> 🎵 Qual vai ser sua próxima música? </h3>
 
 ## 📄 Contexto
 
