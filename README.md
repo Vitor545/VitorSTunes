@@ -6,6 +6,8 @@
 
 **Qual é o seu estilo musical favorito?** Nesse projeto eu criei uma aplicação para `pesquisar` e `listar álbuns e músicas` de várias bandas e artistas. É possível até mesmo `ouvir o preview de cada música`. Tudo isso será dividido em várias rotas, cada uma responsável por uma parte da funcionalidade.
 
+<br/>
+
 <img width=100% src="ezgif.com-gif-maker (3).gif"></img>
 
 <br/>
